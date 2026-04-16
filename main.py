@@ -45,7 +45,9 @@ logger = logging.getLogger(__name__)
 # ──────────────────────────────────────────────────────────────────
 
 app = FastAPI(title="PhishGuard Hybrid API", version="3.0.0")
-
+@app.get("/")
+async def home():
+    return {"message": "Phishing Detection API is running 🚀"}
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -1061,7 +1063,7 @@ def build_threat_breakdown(dns_data, whois_data, ssl_data, syntax_data,
 # MAIN SCAN ENDPOINT  — HYBRID ONLY
 # ──────────────────────────────────────────────────────────────────
 
-@app.post("/")
+@app.post("/scan")
 async def scan_url(req: ScanRequest):
     raw_url = req.url.strip()
 
