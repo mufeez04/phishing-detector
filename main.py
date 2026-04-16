@@ -404,10 +404,10 @@ async def check_google_safe_browsing(url: str, session: aiohttp.ClientSession) -
 async def check_urlscan(url: str, session: aiohttp.ClientSession) -> dict:
      try:
         headers = {
-            "API-Key": "YOUR_API_KEY",   # 🔥 PUT HERE
+            "API-Key": "019d3f50-a0cf-777b-a2d6-1f436605293c",   # 🔥 PUT HERE
             "Content-Type": "application/json"
         }
-    base = {
+        base = {
         "source": "Urlscan.io",
         "listed": False,
         "detail": "Skipped — no URLSCAN_API_KEY in .env",
