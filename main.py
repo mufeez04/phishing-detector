@@ -402,6 +402,11 @@ async def check_google_safe_browsing(url: str, session: aiohttp.ClientSession) -
 
 
 async def check_urlscan(url: str, session: aiohttp.ClientSession) -> dict:
+     try:
+        headers = {
+            "API-Key": "YOUR_API_KEY",   # 🔥 PUT HERE
+            "Content-Type": "application/json"
+        }
     base = {
         "source": "Urlscan.io",
         "listed": False,
@@ -417,6 +422,7 @@ async def check_urlscan(url: str, session: aiohttp.ClientSession) -> dict:
     try:
         async with session.post(
             "https://urlscan.io/api/v1/scan/",
+            headers=headers,
             json={"url": url, "visibility": "public"},
             headers={"Content-Type": "application/json", "API-Key": URLSCAN_API_KEY},
             timeout=aiohttp.ClientTimeout(total=15),
