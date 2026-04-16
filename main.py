@@ -1061,7 +1061,7 @@ def build_threat_breakdown(dns_data, whois_data, ssl_data, syntax_data,
 # MAIN SCAN ENDPOINT  — HYBRID ONLY
 # ──────────────────────────────────────────────────────────────────
 
-@app.post("/scan")
+@app.post("/")
 async def scan_url(req: ScanRequest):
     raw_url = req.url.strip()
 
