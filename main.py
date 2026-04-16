@@ -67,8 +67,8 @@ class ScanRequest(BaseModel):
 # CONFIGURATION  (set via environment variables or .env)
 # ──────────────────────────────────────────────────────────────────
 
-GSB_API_KEY      = os.getenv("GOOGLE_SAFE_BROWSING_KEY", "")
-URLSCAN_API_KEY  = os.getenv("URLSCAN_API_KEY", "")
+GSB_API_KEY      = os.getenv("GOOGLE_SAFE_BROWSING_KEY", "AIzaSyAmXK7XhrPEyMquc3hLY4WEEd-PgXFkIsE")
+URLSCAN_API_KEY  = os.getenv("URLSCAN_API_KEY", "019d3f50-a0cf-777b-a2d6-1f436605293c")
 
 SUSPICIOUS_TLDS = {
     "tk","ml","cf","ga","gq","xyz","top","click","link","work","party","date",
