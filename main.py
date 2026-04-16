@@ -422,7 +422,7 @@ async def check_urlscan(url: str, session: aiohttp.ClientSession) -> dict:
             timeout=aiohttp.ClientTimeout(total=15),
         ) as r:
             submit  = await r.json()
-            scan_id = submit.get("uuid")
+            scan_id = submit#.get("uuid")
             if not scan_id:
                 base["detail"] = "Submission failed: " + submit.get("message", "unknown")
                 return base
